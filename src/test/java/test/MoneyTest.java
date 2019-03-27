@@ -17,4 +17,11 @@ public class MoneyTest {
         assertThat(moneyBeforMultiplication.multiplyBy(2), is(equalTo(moneyAfterMultiplication)));
     }
 
+    @Test
+    public void testAddingValueToMoney() {
+        Money money = new Money(1);
+        Money money2 = new Money(2);
+        assertThat(money.add(money), is(equalTo(money2)));
+    }
+
 }
