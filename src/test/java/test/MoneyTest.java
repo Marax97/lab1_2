@@ -46,4 +46,11 @@ public class MoneyTest {
         Money money2 = new Money(2);
         money.subtract(money2);
     }
+
+    public void testCurrencyCodeIsValid() {
+        Money money = new Money(1, Currency.getInstance("USD"));
+        String currencyCode = "USD";
+        assertThat(currencyCode, is(equalTo(money.getCurrencyCode())));
+    }
+
 }
