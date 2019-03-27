@@ -79,4 +79,12 @@ public class MoneyTest {
         assertThat(money.lessOrEquals(money2), is(equalTo(false)));
     }
 
+    @Test
+    public void testIfMoneyIsEqualThenOtherMoney() {
+        Money money = new Money(2);
+        Money money2 = new Money(2);
+        Money money3 = new Money(5);
+        assertThat(money2.lessOrEquals(money), is(equalTo(true)));
+        assertThat(money3.lessOrEquals(money), is(equalTo(false)));
+    }
 }
