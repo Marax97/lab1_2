@@ -47,6 +47,7 @@ public class MoneyTest {
         money.subtract(money2);
     }
 
+    @Test
     public void testCurrencyCodeIsValid() {
         Money money = new Money(1, Currency.getInstance("USD"));
         String currencyCode = "USD";
@@ -58,6 +59,14 @@ public class MoneyTest {
         Currency currency = Currency.getInstance("USD");
         Money money = new Money(1, Currency.getInstance("USD"));
         assertThat(currency, is(equalTo(money.getCurrency())));
+    }
+
+    @Test
+    public void testIfMoneyIsGraterThenOtherMoney() {
+        Money money = new Money(1);
+        Money money2 = new Money(2);
+        assertThat(money2.greaterThan(money), is(equalTo(true)));
+        assertThat(money.greaterThan(money2), is(equalTo(false)));
     }
 
 }
