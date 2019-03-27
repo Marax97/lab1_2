@@ -39,4 +39,11 @@ public class MoneyTest {
         Money money2 = new Money(2);
         assertThat(money2.subtract(money), is(equalTo(money)));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowIllegalArgumentExceptionDuringSubtract() {
+        Money money = new Money(1, Currency.getInstance("USD"));
+        Money money2 = new Money(2);
+        money.subtract(money2);
+    }
 }
