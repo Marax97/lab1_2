@@ -33,4 +33,10 @@ public class MoneyTest {
         money.add(money2);
     }
 
+    @Test
+    public void testSubtractingValueFromMoney() {
+        Money money = new Money(1);
+        Money money2 = new Money(2);
+        assertThat(money2.subtract(money), is(equalTo(money)));
+    }
 }
