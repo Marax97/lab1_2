@@ -53,4 +53,11 @@ public class MoneyTest {
         assertThat(currencyCode, is(equalTo(money.getCurrencyCode())));
     }
 
+    @Test
+    public void testGetCurrencyIsValid() {
+        Currency currency = Currency.getInstance("USD");
+        Money money = new Money(1, Currency.getInstance("USD"));
+        assertThat(currency, is(equalTo(money.getCurrency())));
+    }
+
 }
